@@ -1,17 +1,18 @@
 import numpy as np
 
+
 class Model:
     xMatrix = []
     yMatrix = []
     degree = 0
-    
+
     def __init__(self, xMatrix, yMatrix, degree):
         self.xMatrix = xMatrix
         self.yMatrix = yMatrix
         self.degree = degree
-    
+
     def create_matrix(self):
-        A = np.vander(self.xMatrix, (self.degree+1), increasing = True)
+        A = np.vander(self.xMatrix, (self.degree + 1), increasing=True)
         print(A)
         return A
 
