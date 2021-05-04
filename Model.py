@@ -18,6 +18,5 @@ class Model:
     def calculate_result(self):
         A = self.create_matrix()
         yMatrix = np.matrix(self.yMatrix).T
-        print(yMatrix)
         c = np.linalg.inv(A.T @ A) @ (A.T @ yMatrix)
         print(c)
