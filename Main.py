@@ -4,12 +4,14 @@ from ast import literal_eval
 import numpy as np
 from pip._vendor.distlib.compat import raw_input
 from Model import Model
+from Plot import Plotter
 
 
 class Main:
     degree = 0
     xList = []
     yList = []
+    regResult = []
     def get_points(self):
         try:
             coords = [literal_eval(coord) for coord in raw_input("Please enter your points Ex: (3,0) (0,0) ").split()]
@@ -28,8 +30,13 @@ class Main:
 
     def get_model_result(self):
         model = Model(self.xList, self.yList, self.degree)
-        model.calculate_result()
+        self.regResult = model.calculate_result()
+    
+    def get_plot(self):
+        plotter = Plotter(self.xList, self.yList, self.regResult, self.degree)
+        plotter.plot()
 
 main = Main()
 main.create_lists()
 main.get_model_result()
+main.get_plot()

@@ -19,4 +19,6 @@ class Model:
         A = self.create_matrix()
         yMatrix = np.matrix(self.yMatrix).T
         c = np.linalg.inv(A.T @ A) @ (A.T @ yMatrix)
+        c = c.flatten().tolist()[0]
         print(c)
+        return c
