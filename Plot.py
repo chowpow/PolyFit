@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import seaborn as sns
 
 class Plotter:
     xVals = []
@@ -20,6 +21,8 @@ class Plotter:
         return eqn
 
     def plot(self):
+        sns.set_theme(palette='deep')
+        sns.set_style("white")
         t = np.arange(min(self.xVals)-1, max(self.xVals)+1, 0.1)
         plt.plot(t, self.reg(t), 'red', self.xVals, self.yVals, 'bo')
         plt.show()
