@@ -33,6 +33,8 @@ class Main:
 
     def create_lists_web(self, data, degree):
         self.degree = degree
+        self.x_list = []
+        self.y_list = []
         for coord in data:
             self.x_list.append(coord[0])
             self.y_list.append(coord[1])
